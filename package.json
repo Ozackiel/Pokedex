@@ -1,0 +1,24 @@
+{
+  "name": "pokedex",
+  "version": "0.0.1",
+  "description": "Projeto prático de autodesenvolvimento concebido para consolidar fundamentos essenciais da programação: arquitetura de código limpa, tipagem estática, programação assíncrona e integração com APIs REST.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ozackiel/Pokedex.git"
+  },
+  "keywords": [],
+  "author": "Murilo Pereira Bedim",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ozackiel/Pokedex/issues"
+  },
+  "homepage": "https://github.com/Ozackiel/Pokedex#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
