@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "Murilo Pereira Bedim",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Ozackiel/Pokedex/issues"
   },
