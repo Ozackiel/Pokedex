@@ -10,3 +10,12 @@ Projeto Inicial de carreira visando observar e praticar fundamentos da programa�
 - [ ] Filtros por tipo
 - [ ] Ordenação
 - [ ] Dark Mode
+
+
+## Tech Stack
+
+- .NET MAUI
+- C#
+- HTML
+- CSS
+- JavaScript
