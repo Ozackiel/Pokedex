@@ -4,6 +4,7 @@
   "description": "Projeto prático de autodesenvolvimento concebido para consolidar fundamentos essenciais da programação: arquitetura de código limpa, tipagem estática, programação assíncrona e integração com APIs REST.",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

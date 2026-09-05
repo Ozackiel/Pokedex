@@ -99,7 +99,7 @@ header {
     font-size: 18px;
     margin-bottom: 8px;
     color: var(--text-color);
-    transition: transform 0.3s ease, box-shadow 0.3 ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pokemon-card p {
@@ -132,7 +132,6 @@ header {
     transform: translateY(-2px);
 }
 
-/* Estilo para quando o botão estiver desativado/carregando: */
 #load-more-btn:disabled {
     background-color: #888888;
     cursor: not-allowed;
@@ -173,6 +172,8 @@ header {
     color: var(--text-color);
     width: 90%;
     max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
     border-radius: 20px;
     padding: 30px 24px;
     text-align: center;
@@ -233,10 +234,6 @@ header {
     transition: width 0.5s ease;
 }
 
-.stat-bar-fill.attack {
-    background-color: #ff9800;
-}
-
 .pokemon-metrics {
     display: flex;
     justify-content: space-around;
@@ -272,7 +269,43 @@ header {
     margin-top: 2px;
 }
 
-.modal-card {
-    max-height: 90vh;
-    overflow-y: auto;
+.type-filter-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.type-filter-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.type-filter-container::-webkit-scrollbar-thumb {
+    background: var(--input-border);
+    border-radius: 4px;
+}
+
+.type-btn {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.type-btn:hover {
+    transform: translateY(-2px);
+    border-color: #888;
+}
+
+.type-btn.active {
+    background-color: #e3350d;
+    color: #ffffff;
+    border-color: #e3350d;
 }
