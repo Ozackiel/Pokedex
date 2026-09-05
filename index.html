@@ -18,7 +18,17 @@
             <input type="text" id="search-input" placeholder="Digite o nome ou número do pokémon">
         </section>
         <div id="pokedex-grid" class="pokedex-grid"></div>
+        <div class="pagination-container">
+            <button id="load-more-btn">Carregar Mais</button>
+        </div>
     </main>
+    <div id="pokemon-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-card">
+            <button id="modal-close-btn" class="modal-close">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
     <script type="module" src="./dist/index.js"></script>
 </body>
 
