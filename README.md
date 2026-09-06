@@ -32,8 +32,8 @@ Este projeto não é apenas uma Pokédex visual; ele é o **laboratório prátic
 - [x] **Acessibilidade & Atalhos de Teclado:** Fechamento intuitivo do modal através da tecla `Escape`, do botão de fechar ou clicando fora no overlay.
 - [x] **Dark Mode com Variáveis CSS:** Alternância instantânea de paleta claro/escuro via classe no `body` sem recalcular estilos inline.
 - [x] **Paginação Contínua ("Carregar Mais"):** Controle de estado com desativação do botão durante o carregamento para prevenir cliques duplicados.
-- [ ] **Filtro Interativo por Tipos:** Filtragem de Pokémons por badges clicáveis na tela inicial (Água, Fogo, Grama, etc.).
-- [ ] **Persistência Local (`localStorage`):** Memorização da preferência do tema e Pokémons carregados entre visitas.
+- [x] **Filtro Interativo por Tipos:** Filtragem de Pokémons por badges clicáveis na tela inicial (Água, Fogo, Grama, etc.).
+- [x] **Persistência Local (`localStorage`):** Memorização da preferência do tema e Pokémons carregados entre visitas.
 
 ---
 
@@ -44,16 +44,14 @@ O projeto adota uma arquitetura em camadas concêntricas onde as dependências f
 ```text
 Pokedex/
 ├── index.html              # Estrutura semântica HTML5 e contêineres da UI
-├── style.css               # Design System, variáveis CSS, Grid responsivo e animações
-├── package.json            # Manifesto do projeto ("type": "module")
+├── style.css               # Design do sistema, variáveis CSS, Grid responsivo e animações
 ├── tsconfig.json           # Configurações estritas do compilador TypeScript
-├── .gitignore              # Higiene de repositório (bloqueio de node_modules e dist)
-├── dist/                   # JavaScript nativo puro transpilado pelo tsc (gerado)
+├── .gitignore              # Higiene de repositório
 └── src/                    # Código-fonte TypeScript puro
     ├── types.ts            # Camada 1: Contratos formais e modelos de dados puros
     ├── utils.ts            # Camada 2: Funções puras e utilitários matemáticos
-    ├── api.ts              # Camada 3: Infraestrutura de rede e mapeamento de dados (Adapter)
-    └── index.ts            # Camada 4: Maestro orquestrador de eventos e manipulação do DOM
+    ├── api.ts              # Camada 3: Infraestrutura de rede e mapeamento de dados
+    └── index.ts            # Camada 4: Orquestrador de eventos e manipulação do DOM
 ```
 
 ---
@@ -64,7 +62,7 @@ Para rodar este projeto em sua máquina local sem intermediários:
 
 ### 1. Clonar o Repositório
 ```bash
-git clone https://github.com/SEU_USUARIO/Pokedex.git
+git clone https://github.com/Ozackiel/Pokedex.git
 cd Pokedex
 ```
 
