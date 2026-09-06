@@ -1,0 +1,29 @@
+# Dependências (nunca devem ir para o Git)
+node_modules/
+
+# Arquivos de build e compilação
+dist/
+build/
+*.tsbuildinfo
+
+# Variáveis de ambiente e segredos
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos temporários de editores e IDEs
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# Arquivos do sistema operacional
+Thumbs.db
+.DS_Store
