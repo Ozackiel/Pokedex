@@ -90,7 +90,9 @@ function renderStatRow(label: string, value: number, percent: number, color: str
         </div>
     `;
 }
-
+// ==========================================
+// ABRIR MODAL DE DETALHES
+// ==========================================
 function openPokemonModal(pokemon: Pokemon): void {
     if (!modalBody || !pokemonModal) return;
 
@@ -150,6 +152,9 @@ function createPokemonCardHTML(pokemon: Pokemon): string {
     `;
 }
 
+// ==========================================
+// RENDERIZAR POKEMONS NA GRADE
+// ==========================================
 function renderPokemonCards(pokemons: Pokemon[], append: boolean = false): void {
     if (!pokedexGrid) return;
 
@@ -161,6 +166,9 @@ function renderPokemonCards(pokemons: Pokemon[], append: boolean = false): void 
     }
 }
 
+// ==========================================
+// RENDERIZAR FILTROS DE TIPO
+// ==========================================
 function renderTypeFilters(): void {
     if (!typeFilterContainer) return;
 
@@ -187,7 +195,6 @@ async function updateCatalogAndRender(isLoadMore: boolean = false): Promise<void
 
     const query = searchInput.value.toLowerCase().trim();
 
-    // 1. Resolução do Catálogo Ativo baseado nos tipos selecionados
     if (selectedTypes.size === 0) {
         activeCatalog = allPokemonIndex;
     } else {
@@ -205,7 +212,6 @@ async function updateCatalogAndRender(isLoadMore: boolean = false): Promise<void
         activeCatalog = Array.from(uniqueMap.values()).sort((a, b) => a.id - b.id);
     }
 
-    // 2. Filtragem por busca textual (nome ou ID)
     let filteredList = activeCatalog;
     if (query !== "") {
         filteredList = activeCatalog.filter(
@@ -213,7 +219,6 @@ async function updateCatalogAndRender(isLoadMore: boolean = false): Promise<void
         );
     }
 
-    // 3. Caso nenhum Pokémon atenda aos critérios
     if (filteredList.length === 0) {
         pokedexGrid.innerHTML = `<p class="search-hint">Nenhum Pokémon encontrado com os filtros selecionados.</p>`;
         displayedPokemons = [];
@@ -221,7 +226,6 @@ async function updateCatalogAndRender(isLoadMore: boolean = false): Promise<void
         return;
     }
 
-    // 4. Paginação incremental vs renderização completa
     if (isLoadMore) {
         const startIndex = displayedPokemons.length;
         const newItemsToDisplay = filteredList.slice(startIndex, visibleCount);
@@ -234,7 +238,6 @@ async function updateCatalogAndRender(isLoadMore: boolean = false): Promise<void
         renderPokemonCards(displayedPokemons, false);
     }
 
-    // 5. Atualização do estado do botão Carregar Mais
     if (visibleCount >= filteredList.length) {
         loadMoreBtn.style.display = "none";
     } else {
@@ -278,6 +281,7 @@ searchInput.addEventListener("input", () => {
     }, 300);
 });
 
+// Função de busca com tecla Enter
 searchInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         event.preventDefault();

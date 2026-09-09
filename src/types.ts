@@ -1,3 +1,6 @@
+// ==========================================
+// INTERFACE PADRÃO DE UM POKEMON
+// ==========================================
 export interface Pokemon {
     id: number;
     name: string;

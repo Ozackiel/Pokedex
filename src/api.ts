@@ -6,6 +6,9 @@ const typeListCache = new Map<string, SimplePokemon[]>();
 
 const API_URL = "https://pokeapi.co/api/v2";
 
+// ==========================================
+// INTERFACES PARA ESTRUTURA DE DADOS DA API
+// ==========================================
 export interface SimplePokemon {
     id: number;
     name: string;
@@ -45,6 +48,9 @@ interface PokeApiTypeResponse {
     }>;
 }
 
+// ==========================================
+// FUNÇÃO PARA BUSCAR POKEMONS NA POKEDEX
+// ==========================================
 export async function fetchPokemon(id: number | string): Promise<Pokemon> {
     const search = typeof id === "string" ? id.toLowerCase() : id;
 
@@ -79,6 +85,9 @@ export async function fetchPokemon(id: number | string): Promise<Pokemon> {
     return pokemon;
 }
 
+// ==========================================
+// FUNÇÃO PARA BUSCAR TODOS OS POKEMONS DA POKEDEX
+// ==========================================
 export async function fetchAllPokemonNames(limit: number = 1025): Promise<SimplePokemon[]> {
     const response = await fetch(`${API_URL}/pokemon?limit=${limit}`);
     if (!response.ok) {
@@ -96,6 +105,9 @@ export async function fetchAllPokemonNames(limit: number = 1025): Promise<Simple
     });
 }
 
+// ==========================================
+// FUNÇÃO PARA BUSCAR POKEMONS POR TIPO
+// ==========================================
 export async function fetchPokemonsByType(typeName: string): Promise<SimplePokemon[]> {
     const typeLower = typeName.toLowerCase();
     if (typeListCache.has(typeLower)) {
