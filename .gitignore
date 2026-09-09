@@ -6,6 +6,9 @@ dist/
 build/
 *.tsbuildinfo
 
+# Artefatos locais de agentes de codificação
+.coding-agent/
+
 # Variáveis de ambiente e segredos
 .env
 .env.local
